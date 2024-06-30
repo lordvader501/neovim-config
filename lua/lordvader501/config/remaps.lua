@@ -6,6 +6,11 @@ _G.conf_path = ((vim.fn.has("win32") == 1 or vim.fn.has("win64")) and '~\\AppDat
 local edit_path = conf_path ..
     ((vim.fn.has("win32") == 1 or vim.fn.has("win64")) and '\\lua\\lordvader501' or '/lua/lordvader501')
 
+-- Removes '~' from the window
+_G.remove_tildes_from_window = function()
+    vim.api.nvim_win_set_option(0, 'fillchars', 'eob: ')
+end
+
 local autocmd = vim.api.nvim_create_autocmd
 
 -- Auto formats code on write
@@ -14,6 +19,13 @@ autocmd('BufWritePre', {
     callback = function()
         vim.lsp.buf.format()
     end
+})
+
+autocmd({ "WinEnter", "BufEnter" }, {
+    pattern = "*",
+    callback = function()
+        remove_tildes_from_window()
+    end,
 })
 
 -- Map to edit config any time
