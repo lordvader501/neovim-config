@@ -1,0 +1,25 @@
+return {
+    "tpope/vim-fugitive",
+    config = function()
+        vim.keymap.set('n', '<leader>gaa', ':Git add *<CR>')
+        vim.keymap.set('n', '<leader>ga', ':Git add %<CR>')
+        vim.keymap.set('n', '<leader>gbc', ':Git checkout ')
+        vim.keymap.set('n', '<leader>gbn', ':Git checkout -b ')
+        vim.keymap.set('n', '<leader>gcm', ':Git commit -m ""<left>')
+        vim.keymap.set('n', '<leader>gc', ':Git commit ')
+        vim.keymap.set('n', '<leader>gd', ':Gvdiffsplit<CR>')
+        vim.keymap.set('n', '<leader>gf', ':Git fetch<CR>')
+        vim.keymap.set('n', '<leader>ggm', ':Git pull origin main<CR>')
+        vim.keymap.set('n', '<leader>gg', ':Git pull ')
+        vim.keymap.set('n', '<leader>gi', ':Git init<CR>')
+        vim.keymap.set('n', '<leader>gl', ':Gclog<CR>')
+        vim.keymap.set('n', '<leader>gm', ':Git merge ')
+        vim.keymap.set('n', '<leader>gr', ':Git revert ')
+        vim.keymap.set('n', '<leader>gsa', ':Git stash apply<CR>')
+        vim.keymap.set('n', '<leader>gsp', ':Git stash pop<CR>')
+        vim.keymap.set('n', '<leader>gs', ':Git stash<CR>')
+        vim.keymap.set('n', '<leader>gt', ':Git<CR>')
+        vim.keymap.set('n', '<leader>gpm', ':Git push origin main<CR>')
+        vim.keymap.set('n', '<leader>gp', ':Git push ')
+    end
+}
