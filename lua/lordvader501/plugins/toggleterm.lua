@@ -20,8 +20,7 @@ return {
             --            on_open = fun(t: Terminal), -- function to run when the terminal opens
             --            on_close = fun(t: Terminal), -- function to run when the terminal closes
             --            on_stdout = fun(t: Terminal, job: number, data: string[], name: string) -- callback for processing output on stdout
-            --            on_stderr = fun(t: Terminal, job: number, data: string[], name: string) -- callback for processing output on stderr
-            --            on_exit = fun(t: Terminal, job: number, exit_code: number, name: string) -- function to run when terminal process exits
+            --            on_stderr = fun(t: Terminal, job: number, data: string[], name: string) -- callback for processing output on stderr on_exit = fun(t: Terminal, job: number, exit_code: number, name: string) -- function to run when terminal process exits
             hide_numbers = true,    -- hide the number column in toggleterm buffers
             shade_filetypes = {},
             autochdir = false,      -- when neovim changes it current directory the terminal will change it's own when next it's opened
@@ -48,12 +47,12 @@ return {
                 border = 'curved',
                 -- like `size`, width, height, row, and col can be a number or function which is passed the current terminal
                 width = 120,
-                --                winblend = 3,
-                zindex = 1,
+                winblend = vim.g.neovide and 180 or 0,
+                zindex = 100,
                 title_pos = 'left',
             },
             winbar = {
-                enabled = true,
+                enabled = false,
                 name_formatter = function(term) --  term: Terminal
                     return term.name
                 end

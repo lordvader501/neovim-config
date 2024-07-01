@@ -23,7 +23,11 @@ return {
             cmp_lsp.default_capabilities())
 
         require("fidget").setup({})
-        require("mason").setup()
+        require("mason").setup({
+            ui = {
+                border = "rounded"
+            }
+        })
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
@@ -51,7 +55,6 @@ return {
                     })
                     vim.g.zig_fmt_parse_errors = 0
                     vim.g.zig_fmt_autosave = 0
-
                 end,
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
