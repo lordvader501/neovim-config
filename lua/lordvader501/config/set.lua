@@ -30,26 +30,24 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.o.guifont =
-"Dank\\ Mono,CaskaydiaCove\\ NF,Cascadia\\ Code\\ NF,Cascadia\\ Code\\ PL,Symbols\\ Nerd\\ Font,CaskaydiaCove\\ Nerd\\ Font:h14"
-
+vim.o.guifont = "CaskaydiaCove\\ NF,JetBrainsMono\\ NF:h13"
 
 -- vim.opt.colorcolumn = "140"
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
--- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat",{ bg = "none" })
 -- Set Neovide transparency
 if vim.g.neovide then
-    vim.opt.pumblend = 120
+    -- vim.opt.pumblend = 0
     vim.opt.winblend = 180
     vim.cmd [[
-        highlight Normal guibg=none ctermbg=none
+        " highlight Normal guibg=none ctermbg=none
         highlight NormalFloat guibg=none ctermbg=none
         highlight NonText guibg=none ctermbg=none
     ]]
     vim.g.neovide_window_blurred = true
     vim.g.neovide_transparency = 0.8
     vim.g.transparency = 0.8
-    vim.g.neovide_background_color = "#013f03ff"
+    -- vim.g.neovide_background_color = "#013f03ff"
 
     vim.g.neovide_floating_blur_amount_x = 1000
     vim.g.neovide_floating_blur_amount_y = 1000
