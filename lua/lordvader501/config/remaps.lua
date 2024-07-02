@@ -45,3 +45,22 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 -- Toggle Nvim Tree
 vim.keymap.set("n", "<leader>tf", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader>fd", ":NvimTreeFocus<CR>")
+
+vim.api.nvim_set_keymap('v', '<C-c>', '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-x>', '"+d', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-c>', '"+yy', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-x>', '"+dd', { noremap = true, silent = true })
+
+-- Paste from clipboard using Ctrl+V
+vim.api.nvim_set_keymap('n', '<C-v>', '"+p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-v>', '"+p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('c', '<C-v>', '<C-R>+', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-v>', '<C-R>+', { noremap = true, silent = true })
+if vim.g.neovide then
+    -- Allow clipboard copy paste in neovim
+    -- vim.g.neovide_input_use_logo = 1
+    -- vim.api.nvim_set_keymap('', '<C-v>', '+p<CR>', { noremap = true, silent = true })
+    -- vim.api.nvim_set_keymap('!', '<C-v>', '<C-R>+', { noremap = true, silent = true })
+    -- vim.api.nvim_set_keymap('t', '<C-v>', '<C-R>+', { noremap = true, silent = true })
+    -- vim.api.nvim_set_keymap('v', '<C-v>', '<C-R>+', { noremap = true, silent = true })
+end

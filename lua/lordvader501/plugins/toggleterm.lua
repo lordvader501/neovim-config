@@ -48,11 +48,11 @@ return {
                 -- like `size`, width, height, row, and col can be a number or function which is passed the current terminal
                 width = 120,
                 winblend = vim.g.neovide and 180 or 0,
-                zindex = 100,
+                zindex = 1,
                 title_pos = 'left',
             },
             winbar = {
-                enabled = false,
+                enabled = true,
                 name_formatter = function(term) --  term: Terminal
                     return term.name
                 end
